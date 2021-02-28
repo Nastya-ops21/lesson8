@@ -9,6 +9,31 @@
 <body>
     <script>
 
+if (!("a" in window)) {
+    var a = 1;
+}
+alert(a); //выдаст undefined, нет атрибуда "a" в window , как он появится после if 
+
+var b = function a(x) {
+    x && a(--x);
+};
+alert(a); // затрудняюсь ответить 
+
+function a(x) {
+    return x * 2; 
+var a;
+alert(a); // выдаст тело функции 
+
+function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);  
+}
+b(1, 2, 3);    //arguments [2] и a это ссылка на одно и тоже
+
+function a() {
+    alert(this);
+}
+a.call(null); // this указывает на window , вызов call c параметром null все равно ,что call(), без аргумента функция не привязывается ни к какому объекту
 
     </script>
 </body>
